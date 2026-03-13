@@ -25,7 +25,12 @@ const PAGES_CACHE = '/tmp/cdp-pages.json';
 function sockPath(targetId) { return `${SOCK_PREFIX}${targetId}.sock`; }
 
 function getWsUrl() {
-  const portFile = resolve(homedir(), 'Library/Application Support/Google/Chrome/DevToolsActivePort');
+  const candidates = [
+    resolve(homedir(), 'Library/Application Support/Google/Chrome/DevToolsActivePort'),
+    resolve(homedir(), '.config/google-chrome/DevToolsActivePort'),
+  ];
+  const portFile = candidates.find(path => existsSync(path));
+  if (!portFile) throw new Error(`Could not find DevToolsActivePort file in: ${candidates.join(', ')}`);
   const lines = readFileSync(portFile, 'utf8').trim().split('\n');
   return `ws://127.0.0.1:${lines[0]}${lines[1]}`;
 }
